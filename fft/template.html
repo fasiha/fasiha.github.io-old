@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<title>◊select['h1 doc]</title>
+<link rel="stylesheet" href="/tufte.css">
+◊;Check if TESTING is an environmental variable.
+◊(if (getenv "TESTING") "
+<script type='text/javascript' src='/pushstream.js'></script>
+<script>
+var pushstream = new PushStream({port:8080, });
+  pushstream.onmessage = function(data) {
+    console.log('Received message:', data);
+    if (data === 'now') {
+      window.location.reload();
+    }
+  };
+  pushstream.addChannel('refreshme');
+  pushstream.connect();
+</script>
+
+<script type='text/javascript' src='/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+" "
+<script type='text/javascript' src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+")
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX : {
+    Macros : {
+      vec : [ "{\\bf #1}", 1 ],
+      norm : [ "\\left\\| #1 \\right\\|", 1 ],
+      expp : [ "\\exp\\left(#1\\right)", 1 ],
+    },
+    equationNumbers : {autoNumber : "all"}
+  },
+  tex2jax : {inlineMath : [ [ '$', '$' ], [ '\\(', '\\)' ] ]}
+});
+</script>
+</head>
+
+<article>
+◊(->html doc)
+</article>
