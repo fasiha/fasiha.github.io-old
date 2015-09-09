@@ -11,3 +11,6 @@ fft.html: fft.html.pm pollen.rkt template.html
 clean:
 	rm fft.html index.html
 
+watch:
+	fswatch -0 template.html pollen.rkt fft.html.pm | xargs -0 -n 1 make fft.html
+
