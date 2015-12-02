@@ -1,4 +1,5 @@
 #lang pollen
+◊meta['template: "fft/template.html"]
 
 ◊title{How to use the FFT to make, and take apart, sinusoidal data}
 ◊author{Ahmed Fasih}
