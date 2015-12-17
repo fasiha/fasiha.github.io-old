@@ -1,17 +1,13 @@
-all: index.html texshade.html about.html
+all: index.html tutorial.html
 
-index.html: texshade.html.pm pollen.rkt template.html
-	raco pollen render texshade.html
-	mv texshade.html index.html
+index.html: index.html.pm pollen.rkt template.html
+	raco pollen render index.html
 
-about.html: about.html.pm pollen.rkt template.html
-	raco pollen render about.html
-
-texshade.html: texshade.html.pm pollen.rkt template.html
-	POLLEN="TESTING" raco pollen render texshade.html
+tutorial.html: tutorial.html.pm pollen.rkt template.html
+	raco pollen render tutorial.html
 
 clean:
-	rm texshade.html index.html
+	rm -f tutorial.html index.html
 
 watch:
 	cd .. && node server texshade/texshade.html.pm "cd texshade; POLLEN=TESTING raco pollen render texshade.html"
