@@ -1,7 +1,7 @@
 #lang pollen
 
 ◊title{Cesium.js Showcase}
-◊author{Ahmed Fasih (◊a['href:"https://twitter.com/fasihsignal"]{@fasiha})}
+◊author{Ahmed Fasih (◊a['href:"https://twitter.com/fasihsignal"]{@fasihsignal})}
 
 ◊section{
 

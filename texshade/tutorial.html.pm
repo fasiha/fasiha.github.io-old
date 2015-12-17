@@ -37,7 +37,7 @@ Terrain texture-shading is the brainchild of Leland Brown, whose ◊a['href: "ht
 
 This document has been rendered with ◊a['href: "http://pollenpub.com"]{Pollen} and styled with the ◊a['href: "https://edwardtufte.github.io/tufte-css/"]{Tufte CSS}.
 
-Please write to ◊a['href: "https://twitter.com/fasihsignal"]{@fasiha} with any questions or concerns.
+Please write to ◊a['href: "https://twitter.com/fasihsignal"]{@fasihsignal} with any questions or concerns.
 
 
 }
