@@ -1,7 +1,7 @@
 #lang pollen
 
 ◊title{Texture-shaded terrain visualization—a tutorial}
-◊author{Ahmed Fasih}
+◊author{Ahmed Fasih (◊a['href:"https://twitter.com/fasihsignal"]{@fasihsignal})}
 
 ◊section{
 
@@ -35,10 +35,11 @@ You can now copy the URL and paste it into Twitter, etc. My apologies—currentl
 
 Terrain texture-shading is the brainchild of Leland Brown, whose ◊a['href: "http://textureshading.com"]{website} and two presentations, from ◊a['href: "https://app.box.com/textureshading/"]{2010 and 2014}, provide more cartographic and technical background on the technique.
 
-This document has been rendered with ◊a['href: "http://pollenpub.com"]{Pollen} and styled with the ◊a['href: "https://edwardtufte.github.io/tufte-css/"]{Tufte CSS}.
+Additional snapshots are given ◊link["index.html"]{← back} on the main Cesium.js showcase page.
 
 Please write to ◊a['href: "https://twitter.com/fasihsignal"]{@fasihsignal} with any questions or concerns.
 
+This document has been rendered with ◊a['href: "http://pollenpub.com"]{Pollen} and styled with ◊a['href: "https://edwardtufte.github.io/tufte-css/"]{Tufte CSS}.
 
 }
 
