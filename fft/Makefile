@@ -1,4 +1,4 @@
-all: index.html fft.html
+all: index.html
 
 index.html: fft.html.pm pollen.rkt template.html
 	raco pollen render fft.html

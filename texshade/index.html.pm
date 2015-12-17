@@ -7,8 +7,8 @@
 
 Welcome to my ◊a['href:"http://cesiumjs.org"]{Cesium.js} cartographic showcase. Please visit one of the following applications.
 
-◊marginnote["fig-japan"]{◊img['src: "images/permalink-screenshot.png"]}
-◊h2{◊a['href: "http://maps.aldebrn.me/Apps/"]{Texture-shaded terrain visualization} (◊a['href: "texshade.html"]{tutorial})}
+◊marginnote["fig-japan"]{◊img['src: "images/permalink-screenshot-small.jpg"]}
+◊h2{◊a['href: "http://maps.aldebrn.me/Apps/"]{Texture-shaded terrain visualization} (◊a['href: "tutorial.html"]{tutorial})}
 
 The ◊a['href: "tutorial.html"]{tutorial} will help you get started if you’ve never used Cesium before.
 
