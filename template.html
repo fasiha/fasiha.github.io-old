@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<title>◊select['h1 doc]</title>
+<link rel="stylesheet" href="/tufte.css">
+◊;Check if a POLLEN environmental variable is set, doesn't matter what to.
+◊(if (getenv "POLLEN") "
+<script src='/public/eventsource.min.js'></script>
+<script>
+var id = 'refreshme';
+var testEvent = new EventSource('/events/' + id);
+testEvent.addEventListener('sendMessage', function(event) {
+  var data = JSON.parse(event.data);
+  console.log('Data received:', data);
+  if (data === 'change' || data === 'rename') {
+    window.location.reload();
+  }
+});
+</script>
+" "
+")
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX : {
+    Macros : {
+      vec : [ "{\\bf #1}", 1 ],
+      norm : [ "\\left\\| #1 \\right\\|", 1 ],
+      expp : [ "\\exp\\left(#1\\right)", 1 ],
+      bigpar : [ "\\left(#1\\right)", 1 ],
+      bigbrack : [ "\\left[#1\\right]", 1 ],
+    },
+    equationNumbers : {autoNumber : "all"}
+  },
+  tex2jax : {inlineMath : [ [ '$', '$' ], [ '\\(', '\\)' ] ]}
+});
+</script>
+</head>
+
+<article>
+◊(->html doc)
+</article>

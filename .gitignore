@@ -1,6 +1,6 @@
 .DS_Store
-*/pollen-cache/
-*/compiled/
+pollen-cache/
+compiled/
 *.ttf
 MathJax/
 node_modules/

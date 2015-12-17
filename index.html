@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<title>Welcome</title>
+<link rel="stylesheet" href="/tufte.css">
+
+<script src='/public/eventsource.min.js'></script>
+<script>
+var id = 'refreshme';
+var testEvent = new EventSource('/events/' + id);
+testEvent.addEventListener('sendMessage', function(event) {
+  var data = JSON.parse(event.data);
+  console.log('Data received:', data);
+  if (data === 'change' || data === 'rename') {
+    window.location.reload();
+  }
+});
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX : {
+    Macros : {
+      vec : [ "{\\bf #1}", 1 ],
+      norm : [ "\\left\\| #1 \\right\\|", 1 ],
+      expp : [ "\\exp\\left(#1\\right)", 1 ],
+      bigpar : [ "\\left(#1\\right)", 1 ],
+      bigbrack : [ "\\left[#1\\right]", 1 ],
+    },
+    equationNumbers : {autoNumber : "all"}
+  },
+  tex2jax : {inlineMath : [ [ '$', '$' ], [ '\\(', '\\)' ] ]}
+});
+</script>
+</head>
+
+<article>
+<decoded-root><p><label for="fam-caption" class="margin-toggle">⊕</label><input id="fam-caption" class="margin-toggle" type="checkbox" /><span class="marginnote"><img src="images/fam-stache.jpg" /><br />The Aldebaran family—incogniti, circa July 2015. Clockwise from right: Ahmed, Alistair, Emily, and Basile.</span></p><h1>Welcome</h1><p class="subtitle">Ahmed Fasih</p><section>Hi!</section></decoded-root>
+</article>
