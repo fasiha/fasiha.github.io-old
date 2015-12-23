@@ -10,6 +10,12 @@ Usage:
 
 $ node server take3.html.pm "POLLEN=TESTING raco pollen render take3.html"
 
+or 
+
+$ node server "*.pm" "POLLEN=TESTING raco pollen render *.html"
+
+(N.B. The "*.pm" must be in quotes, or your shell will expand it!)
+
 Open http://localhost:3000/take3.html
 
 Whenever take3.html.pm is saved, Node will detect it, rerun Pollen, and send a
@@ -29,14 +35,16 @@ var EventEmitter = require('events');
 var express = require('express');
 var onFinished = require('on-finished');
 var bodyParser = require("body-parser");
+var glob = require("glob");
 
 var events = {refreshme : new EventEmitter()};
 
 var app = express();
-app.use(bodyParser.text({ type: '*/*' }));
+app.use(bodyParser.text({type : '*/*'}));
 
 app.post("/events/:id", function(req, res) {
-  // This was helpful: http://www.html5rocks.com/en/tutorials/eventsource/basics/
+  // This was helpful:
+  // http://www.html5rocks.com/en/tutorials/eventsource/basics/
   var id = req.params.id;
   if (!(id in events)) {
     events[id] = new EventEmitter();
@@ -89,36 +97,43 @@ var server = app.listen(PORT, function() {
 
 var handleFiles = function() {
   if (FILE_TO_WATCH) {
-    var watch = fs.watch(FILE_TO_WATCH, function(ev, fname) {
-      // What should actually be done when transmitting: emit on an event and
-      // log to console.
-      var transmitMessage = function() {
-        events.refreshme.emit('sendMessage', 'sendMessage', ev);
-        console.log('File change detected and transmitted:', ev);
-      };
+    glob(FILE_TO_WATCH, function(err, files) {
+      files.map(function(file) {
+        var watch = fs.watch(file, function(ev, fname) {
+          // What should actually be done when transmitting: emit on an event
+          // and log to console.
+          var transmitMessage = function() {
+            events.refreshme.emit('sendMessage', 'sendMessage', ev);
+            console.log('File change detected and transmitted:', ev);
+          };
 
-      // If we are given a command to run (e.g., re-render the changed file), do
-      // so asynchronously and send the message when completed, in the callback.
-      // If no command is needed, transmit the message right away.
-      if (COMMAND_TO_RUN) {
-        child_process.exec(COMMAND_TO_RUN, function(err, stdout, stderr) {
-          console.log('Command run. Output: \n' + stdout);
-          if (stderr) {
-            console.log('Command resulted in ERROR:', stderr);
+          // If we are given a command to run (e.g., re-render the changed
+          // file), do so asynchronously and send the message when completed, in
+          // the callback.  If no command is needed, transmit the message right
+          // away.
+          if (COMMAND_TO_RUN) {
+            child_process.exec(COMMAND_TO_RUN, function(err, stdout, stderr) {
+              console.log('Command run. Output: \n' + stdout);
+              if (stderr) {
+                console.log('Command resulted in ERROR:', stderr);
+              }
+              transmitMessage();
+            });
+          } else {
+            transmitMessage();
           }
-          transmitMessage();
-        });
-      } else {
-        transmitMessage();
-      }
 
-      // If the file was renamed (vim saving does this, e.g., see
-      // https://github.com/nodejs/node-v0.x-archive/issues/3640#issuecomment-6806347),
-      // the watch will no longer work. Recreate it.
-      if (ev === 'rename') {
-        handleFiles();
-      }
+          // If the file was renamed (vim saving does this, e.g., see
+          // https://github.com/nodejs/node-v0.x-archive/issues/3640#issuecomment-6806347),
+          // the watch will no longer work. Recreate it.
+          if (ev === 'rename') {
+            handleFiles();
+          }
+        });
+
+      });
+
     });
   }
-}
+};
 handleFiles();

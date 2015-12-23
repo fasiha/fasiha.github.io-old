@@ -7,6 +7,7 @@
     "body-parser": "^1.13.3",
     "event-source-polyfill": "0.0.6",
     "express": "^4.13.3",
+    "glob": "^6.0.1",
     "on-finished": "^2.3.0"
   },
   "devDependencies": {},
