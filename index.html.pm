@@ -23,7 +23,7 @@ The Aldebaran family, incognita. Circa July 2015. Clockwise from right: Ahmed, A
 
 After enjoying programming and Unixing for years, I discovered applied math in mid-undergrad and decided it would be harder and therefore more interesting than “just” software engineering. I have since revised my views, but I’ve been able to combine both sets of interests in industry and, before that, grad school (terminal ABD in electrical engineering at Ohio State).
 
-Past projects include designing new radar signal processing algorithms, implementing fast backprojection imaging on GPUs using CUDA, managing the machine learning engine for a counter-IED camera–radar system, and implementing next-gen target tracking algorithms in C++.
+Past projects include designing new signal processing algorithms, then implementing them in C++ for CPUs or in CUDA for GPUs; managing the machine learning engine for a camera–radar system; and an app to help test pilots fly accurate tracks in tandem with other aircraft.
 
 Right now I find myself slinging boatloads of JavaScript and doing copious signal processing. And when not applying math or writing code, I enjoy studying Japanese, Chinese, and many other of this world’s languages and literatures.
 
@@ -39,7 +39,6 @@ Online:
 ◊li{◊link["https://plus.google.com/107217279194013656387"]{G+}: fine technobabble}
 ◊li{◊link["http://forum.koohii.com/user-4838.html"]{Koohii}: 日本語のフォーラム}
 ◊li{◊link["http://www.memrise.com/user/aldebrn/courses/learning/"]{Memrise}: memorizing for language fun}
-◊li{◊link["http://www.linkedin.com/pub/ahmed-fasih/7/666/b30/"]{LinkedIn}: corporate stooge}
 }
 
 
