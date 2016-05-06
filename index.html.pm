@@ -21,11 +21,11 @@ The Aldebaran family, incognita. Circa July 2015. Clockwise from right: Ahmed, A
 
 ◊h2{About}
 
-After enjoying programming and Unixing for years, I discovered applied math in mid-undergrad and decided it would be harder and therefore more interesting than “just” software engineering. I have since revised my views, but I’ve been able to combine both sets of interests in industry and, before that, grad school (terminal ABD in electrical engineering at Ohio State).
+After enjoying programming and Unixing for years, I discovered applied math in mid-undergrad and decided it would be harder, and therefore more interesting, than “just” software engineering. After years of grad school (terminal ABD in electrical engineering at Ohio State), then working in the lovely D.C. metro area (for Leidos, then the Johns Hopkins University Applied Physics Lab), I revised my views and came back to Ohio to work as a software engineer who happens to know about signal processing and machine learning.
 
-Past projects include designing new signal processing algorithms, then implementing them in C++ for CPUs or in CUDA for GPUs; managing the machine learning engine for a camera–radar system; and an app to help test pilots fly accurate tracks in tandem with other aircraft.
+I like to train machine learning algorithms and prototype statistical signal processing techniques in Python and Matlab (learning Julia). To make them go zoom, I implement them in C and C++ for CPUs and in CUDA for GPUs. I really like making websites in JavaScript (front-end and Node.js) and Clojure/ClojureScript. I also love looking at maps, so recently I’ve started making them as well (see above).
 
-Right now I find myself slinging boatloads of JavaScript and doing copious signal processing. And when not applying math or writing code, I enjoy studying Japanese, Chinese, and many other of this world’s languages and literatures.
+And when not applying math or writing code, I enjoy studying Japanese, Chinese, and many other of this world’s languages and literatures. I’m learning Japanese, and some friends and I are making ◊link["https://www.unlockjapanese.com/"]{UnlockJapanese}.
 
 ◊h2{Location}
 IRL: Dayton, Ohio, USA.
